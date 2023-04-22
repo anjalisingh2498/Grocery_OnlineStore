@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Registration page</title>
+  <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<style>
+
+  
+body{
+     background: url('bck.jpg') no-repeat center center fixed; 
+      background-size: cover;
+  
+
+}
+  /*
+   body { 
+      background-image:url('bck.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height:100%;
+      width:100%;
+    }
+    */
+     
+    
+    .form-container {
+      background-color: rgb(224, 92, 92);
+      border-radius: 5px;
+      padding: 30px;
+      margin-top: 60px;
+      margin-right: 59px;
+    }
+    .form-control.error {
+      border-color: rgb(0, 17, 255);
+    }
+    .error-message {
+      color: red;
+      font-size: 12px;
+    }
+    .last{
+        text-align: center;
+    }
+    h3{
+        margin-bottom: 2.5rem;
+    }
+
+    .form-group {
+    margin-bottom: 2rem;
+    }
+    .nav-item{
+      font-weight: bold;
+      text-emphasis-color: orange;
+      padding: 0.5rem 1rem;
+    }
+
+    .nav-item a:hover,
+    .nav-link .home-active{
+    background-color: green;
+    border-radius: 5rem;
+    color: green;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    
+}
+.design{
+  padding: 28px;
+      margin-top: 55px;
+      margin-right: 500px;
+}
+
+  </style>
+<body>
+<nav class="navbar navbar-expand-sm navbar-light" style="background-color: #96e7e7;">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">
+      <img src="logo.jpg" alt="Logo" style="width: 55px;">
+  </a>
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#" class="home-active">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">About Us</a>
+    </li>
+    
+     <li class="nav-item">
+      <a class="nav-link" href="#">Contact Us</a>
+    </li>
+
+    <!-- Dropdown -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Products
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Fruits</a>
+        <a class="dropdown-item" href="#">Diary</a>
+        <a class="dropdown-item" href="#">Beverages</a>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+<div class="design">
+<div class="container">
+    <div class="row justify-content-center">
+     <!-- <div class="col-md-4">-->
+        <div class="form-container">
+          <h3 class="text-center">Registration</h3>
+          <form id="registrationForm" onsubmit="return validateForm()"></form>
+          
+            <div class="form-group">
+    
+              <input type="text" class="form-control" id="name" placeholder="Name" name="name" required>
+              <div class="error-message"></div>
+            </div>
+
+            <div class="form-group">
+                
+                <input type="email" class="form-control" id="email" placeholder="Email" name="name" required>
+                <div class="error-message"></div>
+              </div>
+            <div class="form-group">
+              
+              <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+              <div class="error-message"></div>
+            </div>
+            <div class="form-group">
+                
+                <input type="password" class="form-control" id="password" placeholder="confirm password" name="password" required>
+                <div class="error-message"></div>
+                <label>
+                    <input type="checkbox" checked="checked" name="remember"> I read and agree to terms and conditions
+                  </label>
+              </div>
+             
+            
+            
+            <div class="form-group">
+              <button type="submit" class="btn btn-success btn-block">Login</button>
+         
+            </div>
+            <div class="last"
+            <p>Already have an account?<a href="#">Login Here</a></p>
+        </div>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+function validateForm() {
+  var password = document.getElementById("password").value;
+  var confirmPassword = document.getElementById("confirmPassword").value;
+  if (password != confirmPassword) {
+    alert("Passwords do not match.");
+    return false;
+  }
+  return true;
+}
+</script>
+</body>
+</html>
